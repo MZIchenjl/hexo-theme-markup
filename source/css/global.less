@@ -1,0 +1,47 @@
+@import "./variables.less";
+@import "./normalize.less";
+html {
+    color: #333;
+    font-family: @font-family;
+}
+
+body {
+    line-height: @line-height;
+    word-break: break-all;
+    font-size: @font-size-lg;
+    @media (max-width: 1000px) and (min-width: 400px) {
+        font-size: @font-size;
+    }
+    @media (max-width: 400px) {
+        font-size: @font-size-sm;
+    }
+}
+
+.clearfix {
+    zoom: 1;
+    &::before,
+    &::after {
+        content: "";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+#container {
+    position: relative;
+}
+
+#main {
+    margin: 0 auto;
+    max-width: 40em;
+    min-height: 40vh;
+    padding: 0 1em;
+    box-sizing: border-box;
+}
+
+::selection {
+    color: @color-selection;
+    background-color: @background-color-selection;
+}
