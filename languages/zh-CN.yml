@@ -1,0 +1,14 @@
+menu:
+  home: 首页
+  archives: 归档
+  categories: 分类
+  tags: 标签
+  about: 关于
+
+post:
+  view_all: 阅读全部
+  prev: 前一篇
+  next: 后一篇
+  datetime: 日期
+  category: 分类
+  catalogue: 目录
