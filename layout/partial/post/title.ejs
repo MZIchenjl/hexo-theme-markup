@@ -1,0 +1,7 @@
+<h1 class="post-title" itemprop="name">
+<% if(index) {%>
+<a class="post-title-link" href="<%- url_for(post.path) %>" title="<%- post.title %>" itemprop="url"><%= post.title %></a>
+<%} else {%>
+<%= post.title %>
+<%} %>
+</h1>

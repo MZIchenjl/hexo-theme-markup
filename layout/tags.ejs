@@ -1,0 +1,12 @@
+<section id="tags">
+    <h2 id="tags-title">
+        <%= _.capitalize(__('menu.tags')) %>
+    </h2>
+    <div class="tags">
+        <% if(site.tags.length) { %>
+            <%- list_tags(site.tags, { show_count: false, style: 'link', separator: '' }) %>
+        <% } else { %>
+            (no cotent)
+        <% } %>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+<article class="post" itemscope itemprop="blogPost">
+    <%- partial("post/title", { index: index}) %>
+    <% if(!about){ %>
+    <%- partial("post/meta") %>
+    <% } %>
+    <% var is_all = !post.excerpt -%>
+    <div class="post-content" itemprop="articleBody">
+    <% if(index && !about) { %>
+        <% if(is_all) {%>
+            <%- post.content %>
+        <% } else { %>
+            <%- post.excerpt %>
+        <% } %>
+    <% } else { %>
+        <% var post_toc = toc(post.content) %>
+        <% if (!index && !about && post_toc) { %>
+            <div id="toc">
+            <h2 class="toc-title"><%= __('post.catalogue') %></h2>
+                <%- post_toc %>
+            </div>
+        <% } %>
+        <%- post.content %>
+    <% } %>
+    </div>
+    <% if(!about) { %>
+    <%- partial("post/footer") %>
+    <% } %>
+    <% if(!index && !about){ %>
+    <%- partial("post/nav") %>
+    <% } %>
+</article>

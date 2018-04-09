@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html<%- config.language ? " lang=" + `"${config.language.substring(0, 2)}"` + "" : ""%>>
+  <%- partial('partial/head') %>
+  <body>
+    <div id="container">
+      <%- partial('partial/header') %>
+      <main id="main">
+        <%- body %>
+      </main>
+    </div>
+    <%- partial('partial/footer') %>
+  </body>
+</html>

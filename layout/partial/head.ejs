@@ -1,0 +1,19 @@
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <%
+        var title = page.title;
+        if (is_archive()) {
+            title = _.capitalize(__('menu.archives'));
+        } else if (is_category()) {
+            title = _.capitalize(__('menu.categories')) + ': ' + _.capitalize(page.category);
+        } else if (is_tag()) {
+            title = _.capitalize(__('menu.tags')) + ': #' + _.capitalize(page.tag);
+        }
+    -%>
+    <% if (theme.customize.favicon) { %>
+        <link rel="icon" href="<%- url_for(theme.customize.favicon) %>" />
+    <% } %>
+<title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
+    <%- css('css/style') %>
+</head>

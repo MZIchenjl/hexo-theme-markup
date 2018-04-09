@@ -1,0 +1,22 @@
+<% if (post.prev || post.next) { %>
+<div id="post-nav" class="clearfix">
+    <% if (post.prev) { %>
+        <a href="<%- url_for(post.prev.path) %>" id="post-nav-next" class="post-nav-link">
+            <strong class="post-nav-caption"><%= __('post.next') %></strong>
+            <div class="post-nav-title">
+                <% if (post.prev.title) { -%>
+                    <%= post.prev.title -%>
+                <% } else { -%>
+                    (no title)
+                <% } -%>
+            </div>
+        </a>
+    <% } %>
+    <% if (post.next) { %>
+        <a href="<%- url_for(post.next.path) %>" id="post-nav-prev" class="post-nav-link">
+            <strong class="post-nav-caption"><%= __('post.prev') %></strong>
+            <div class="post-nav-title"><%= post.next.title %></div>
+        </a>
+    <% } %>
+</div>
+<% } %>

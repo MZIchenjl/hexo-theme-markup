@@ -1,0 +1,6 @@
+<div class="post-footer clearfix">
+<%- partial('tags') %>
+<% if(index) { %>
+    <a class="post-more-link" href="<%- url_for(post.path) %>#more" title="<%- post.title %>" itemprop="url"><%- __('post.view_all') %></a>
+<%} %>
+</div>

@@ -1,0 +1,4 @@
+<% page.posts.each(function (post) { %>
+<%- partial('partial/article', { post: post, index: true, about: false }) %>
+<% }) %>
+<%- partial('partial/paginator') %>

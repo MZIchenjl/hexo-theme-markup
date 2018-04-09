@@ -1,0 +1,21 @@
+<%
+    var title = page.title;
+    if (is_archive()) {
+        title = _.capitalize(__('menu.archives'));
+    } else if (is_category()) {
+        title = _.capitalize(__('menu.categories')) + ': ' + _.capitalize(page.category);
+    } else if (is_tag()) {
+        title = _.capitalize(__('menu.tags')) + ': #' + _.capitalize(page.tag);
+    }
+-%>
+<h1 id="archives-title"><%= title %></h1>
+<% page.posts.each(function (post, i) { %>
+    <div class="archive">
+        <h2 class="archive-title">
+            <a class="archive-title-link" href="<%- url_for(post.path) %>" title="<%- post.title %>" itemprop="url"><%= post.title %></a>
+        </h2>
+        <%- partial('post/meta', { post: post }) %>
+        <%- partial('post/tags', { post: post }) %>
+    </div>
+<% }); %>
+<%- partial('paginator') %>

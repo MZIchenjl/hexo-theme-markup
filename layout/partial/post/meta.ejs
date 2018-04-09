@@ -1,0 +1,16 @@
+<div class="post-meta">
+    <% if(post.date) { %>
+    <span><%= __('post.datetime') %> :</span>
+    <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished">
+        <%- date(post.date, "YYYY-MM-DD") %>
+    </time>
+    <% } %>
+    <% if (post.categories && post.categories.length) { %>
+    <span><%= __('post.category') %> :</span>
+    <%- list_categories(post.categories, {
+        show_count: false,
+        class: 'post-category',
+        style: 'none'
+    }) %>
+    <% } %>
+</div>

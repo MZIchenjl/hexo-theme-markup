@@ -1,0 +1,19 @@
+<header id="header">
+  <h1 class="blog-title">
+    <a href="<%- url_for() %>" class="logo"><%= config.title %></a>
+  </h1>
+  <% if(config.subtitle) { -%>
+  <h2 class="subtitle">
+    <%= config.subtitle %>
+  </h2>
+  <% } -%>
+</header>
+<nav id="navbar">
+  <ul>
+    <% for (name in theme.menu) { -%>
+      <li>
+        <a href="<%- url_for(theme.menu[name]) %>" class="nav-link"><%- __('menu.' + name) %></a>
+      </li>
+    <% } -%>
+  </ul>
+</nav>
