@@ -1,4 +1,7 @@
 <head>
+    <% if (theme.customize.favicon) { %>
+    <link rel="icon" href="<%- url_for(theme.customize.favicon) %>" />
+    <% } %>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <%
@@ -11,9 +14,12 @@
             title = _.capitalize(__('menu.tags')) + ': #' + _.capitalize(page.tag);
         }
     -%>
-    <% if (theme.customize.favicon) { %>
-        <link rel="icon" href="<%- url_for(theme.customize.favicon) %>" />
-    <% } %>
+    <%- open_graph({
+        fb_app_id:      theme.miscellaneous.open_graph.fb_app_id,
+        fb_admins:      theme.miscellaneous.open_graph.fb_admins,
+        twitter_id:     theme.miscellaneous.open_graph.twitter_id,
+        google_plus:    theme.miscellaneous.open_graph.google_plus,
+    }) -%>
 <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
     <%- css('css/style') %>
 </head>
