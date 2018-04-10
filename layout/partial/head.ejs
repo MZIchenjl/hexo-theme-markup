@@ -20,6 +20,9 @@
         twitter_id:     theme.miscellaneous.open_graph.twitter_id,
         google_plus:    theme.miscellaneous.open_graph.google_plus,
     }) -%>
-<title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
+<% if (theme.plugins.google_site_verification) { %>
+    <meta name="google-site-verification" content="<%= theme.plugins.google_site_verification %>" />
+<% } %>
+    <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
     <%- css('css/style') %>
 </head>
