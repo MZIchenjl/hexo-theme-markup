@@ -3,9 +3,9 @@
     if (is_archive()) {
         title = _.capitalize(__('menu.archives'));
     } else if (is_category()) {
-        title = _.capitalize(__('menu.categories')) + ': ' + _.capitalize(page.category);
+        title = _.capitalize(__('menu.categories')) + ': ' + page.category;
     } else if (is_tag()) {
-        title = _.capitalize(__('menu.tags')) + ': #' + _.capitalize(page.tag);
+        title = _.capitalize(__('menu.tags')) + ': #' + page.tag;
     }
 -%>
 <h1 id="archives-title"><%= title %></h1>

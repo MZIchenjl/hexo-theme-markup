@@ -8,17 +8,16 @@
         word-wrap: break-word;
         .tag-link {
             display: inline-block;
-            color: #fff;
-            background-color: @color-default;
+            color: lighten(@color-default, 20%);
             text-decoration: none;
             margin-right: 10px;
             margin-bottom: 10px;
-            padding: .5em .8em;
+            padding: 5px 20px;
             border: 1px dashed transparent;
             transition: all 100ms ease;
             -webkit-transition: all 100ms ease;
             &:hover {
-                color: lighten(@color-default, 20%);
+                color: @color-default;
                 background-color: #eee;
             }
             &:focus {
