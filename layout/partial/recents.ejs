@@ -1,10 +1,10 @@
 <% if (site.posts.length) { %>
 <div id="recents">
-    <h2 id="recents-title"><%= __('widget.recents') %></h2>
-    <ul id="recent-posts">
+    <h2 class="widget-title"><%= __('widget.recents') %></h2>
+    <ul class="widget-list">
         <% site.posts.sort('date', -1).limit(5).each(function(post) { %>
         <li>
-            <a class="recent-post-link" href="<%- url_for((post.link?post.link:post.path)) %>">
+            <a class="widget-item-link" href="<%- url_for((post.link?post.link:post.path)) %>">
                 <%= post.title %>
             </a>
         </li>

@@ -1,0 +1,12 @@
+<% if (site.posts.length) { %>
+<div id="links">
+    <h2 class="widget-title"><%= __('widget.links') %></h2>
+    <ul class="widget-list">
+        <% for (var i in theme.miscellaneous.links) { %>
+        <li>
+            <a class="widget-item-link" href="<%- theme.miscellaneous.links[i] %>"><%= i %></a>
+        </li>
+        <% } %>
+    </ul>
+</div>
+<% } %>
