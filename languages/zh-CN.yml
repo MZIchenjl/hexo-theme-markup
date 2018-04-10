@@ -12,3 +12,6 @@ post:
   datetime: 日期
   category: 分类
   catalogue: 目录
+
+widget:
+  recents: 最近文章

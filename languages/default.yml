@@ -12,3 +12,6 @@ post:
   datetime: Datetime
   category: Category
   catalogue: Catalogue
+
+widget:
+  recents: Recents

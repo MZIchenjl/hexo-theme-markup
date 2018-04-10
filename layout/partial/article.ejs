@@ -23,9 +23,12 @@
     <% } %>
     </div>
     <% if(!about) { %>
-    <%- partial("post/footer") %>
+    <%- partial('post/footer') %>
     <% } %>
     <% if(!index && !about){ %>
-    <%- partial("post/nav") %>
+    <%- partial('post/nav') %>
     <% } %>
 </article>
+<% if(!index) { %>
+<%- partial('partial/recents') %>
+<% } %>
