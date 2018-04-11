@@ -30,8 +30,11 @@
     <% } %>
 </article>
 <% if(!index) { %>
-<%- partial('partial/recents') %>
+<%- partial('comment/index') %>
 <% } %>
 <% if(!index) { %>
-<%- partial('partial/links') %>
+<%- partial('recents') %>
+<% } %>
+<% if(!index) { %>
+<%- partial('links') %>
 <% } %>
