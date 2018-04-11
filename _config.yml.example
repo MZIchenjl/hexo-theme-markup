@@ -1,0 +1,28 @@
+menu:
+  home: /
+  archives: /archives
+  tags: /tags
+  about: /about
+
+customize:
+  favicon: favicon.ico
+
+plugins:
+  google_analytics: 
+  google_site_verification:
+  baidu_analytics: 
+  mathjax: true
+
+comment:
+    disqus: 
+
+
+miscellaneous:
+    open_graph: # http://ogp.me
+        fb_app_id:
+        fb_admins:
+        twitter_id:
+        google_plus:
+    links:
+        Hexo: https://hexo.ico
+        MZI: https://github.com/MZIchenjl
