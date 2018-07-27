@@ -49,6 +49,9 @@
         &-link {
             text-decoration: none;
             color: @color-default;
+            &:hover{
+                color: lighten(@color-default, 10%);
+            }
         }
     }
     &-meta {
@@ -90,7 +93,7 @@
             color: lighten(@color-default, 20%);
             background-color: #eee;
         }
-        &:focus {
+        &:active {
             color: @color-default;
             background-color: transparent;
             border-color: @color-default;
