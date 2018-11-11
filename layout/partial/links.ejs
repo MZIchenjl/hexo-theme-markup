@@ -1,4 +1,6 @@
-<% if (site.posts.length) { %>
+<% if (site.posts.length
+    && theme.miscellaneous.links
+    && theme.miscellaneous.links.length) { %>
 <div id="links">
     <h2 class="widget-title"><%= __('widget.links') %></h2>
     <ul class="widget-list">
