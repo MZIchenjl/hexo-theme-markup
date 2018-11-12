@@ -110,7 +110,7 @@
             line-height: @line-height;
         }
         table {
-            border-color: none;
+            border-color: transparent;
             td+td {
                 border-left: thin solid @color-border;
             }
@@ -194,17 +194,14 @@
             border-bottom: none;
         }
         blockquote {
-            margin: 0;
-            margin-top: 1.5em;
-            margin-bottom: 1.5em;
+            margin: 1.5em 0;
             box-sizing: border-box;
             font-size: 1.1em;
-            padding: 1em;
             background: #fcfcfc;
             font-family: @font-blockquote-family;
             color: #666;
             border-left: 5px solid @color-border;
-            padding-left: 1.5em;
+            padding: 1em 1em 1em 1.5em;
             p:first-child {
                 margin-top: 0;
             }
