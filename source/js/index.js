@@ -8,15 +8,21 @@ function TOC(id) {
   this.state = TOC_EXPAND;
   this.lock = TOC_UNLOCK;
 
-  const tocContainer = document.getElementById(id);
-  this.tocList = tocContainer.getElementsByClassName('toc').item(0);
-  this.tocToggle = tocContainer.getElementsByClassName('toc-toggle').item(0);
-  this.tocCaret = tocContainer.getElementsByClassName('toc-caret').item(0);
+  this.tocContainer = document.getElementById(id);
+  if (!this.tocContainer) {
+    return;
+  }
+  this.tocList = this.tocContainer.getElementsByClassName('toc').item(0);
+  this.tocToggle = this.tocContainer.getElementsByClassName('toc-toggle').item(0);
+  this.tocCaret = this.tocContainer.getElementsByClassName('toc-caret').item(0);
 }
 
 
 TOC.prototype.init = function () {
   var self = this;
+  if (!this.tocContainer) {
+    return;
+  }
   this.tocToggle.addEventListener('click', function () {
       self.toggle();
   });
