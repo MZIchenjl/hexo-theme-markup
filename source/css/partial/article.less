@@ -8,7 +8,7 @@
     position: relative;
 }
 
-@media screen and (min-width: 1000px) {
+@media (min-width: 1000px) {
     #post-nav-next {
         float: right;
         text-align: right;
@@ -22,7 +22,7 @@
 .post {
     margin-bottom: 40px;
     &-nav-link {
-        @media screen and (min-width: 1000px) {
+        @media (min-width: 1000px) {
             width: 50%;
         }
         text-decoration: none;
@@ -118,12 +118,7 @@
                 border-left: thin solid @color-border;
             }
         }
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h1, h2, h3, h4, h5, h6 {
             font-weight: 600;
             line-height: @line-height;
         }
@@ -146,9 +141,37 @@
             padding: 0 .1em;
         }
         #toc {
+            position: relative;
             border-bottom: 1px solid @color-border;
             a {
                 border: none;
+            }
+            .toc {
+                &.shrink {
+                    display: none;
+                }
+                &-toggle {
+                    cursor: pointer;
+                }
+                &-title {
+                    margin-bottom: .5em;
+                }
+                &-caret {
+                    width: 0;
+                    height: 0;
+                    position: relative;
+                    top: -0.1em;
+                    display: inline-block;
+                    border-left: .29em solid transparent;
+                    border-right: .29em solid transparent;
+                    border-bottom: .5em solid @color-default;
+                    &.down {
+                        border-bottom: none;
+                        border-left: .29em solid transparent;
+                        border-right: .29em solid transparent;
+                        border-top: .5em solid @color-default;
+                    }
+                }
             }
         }
         h2.toc-title {

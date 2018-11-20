@@ -15,7 +15,12 @@
         <% var post_toc = toc(post.content) %>
         <% if (!index && !about && post_toc) { %>
             <div id="toc">
-            <h2 class="toc-title"><%= __('post.catalogue') %></h2>
+            <h2 class="toc-title">
+                <span class="toc-toggle">
+                    <span><%= __('post.catalogue') %></span>
+                    <span class="toc-caret"></span>
+                </span>
+            </h2>
                 <%- post_toc %>
             </div>
         <% } %>
