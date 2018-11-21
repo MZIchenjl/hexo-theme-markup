@@ -3,6 +3,7 @@
   var TOC_SHRINK = false;
   var TOC_LOCK = true;
   var TOC_UNLOCK = false;
+  var TOC_TIMER = null;
 
   function TOC(id) {
     this.state = TOC_EXPAND;
@@ -13,6 +14,8 @@
       return;
     }
     this.tocList = this.tocContainer.getElementsByClassName('toc').item(0);
+    this.listHeight = this.tocList.clientHeight;
+    this.tocList.style.height = this.listHeight + 'px';
     this.tocToggle = this.tocContainer.getElementsByClassName('toc-toggle').item(0);
     this.tocCaret = this.tocContainer.getElementsByClassName('toc-caret').item(0);
   }
@@ -29,23 +32,32 @@
 
   TOC.prototype.getLock = function () {
     if (this.lock === TOC_LOCK) {
-      return;
+      return false;
     }
     this.lock = TOC_LOCK;
+    return true;
   };
 
   TOC.prototype.releaseLock = function () {
-    this.lock = TOC_UNLOCK;
+    var self = this;
+    TOC_TIMER = setTimeout(function () {
+      clearTimeout(TOC_TIMER);
+      self.lock = TOC_UNLOCK;
+    }, 200);
   };
 
   TOC.prototype.toggle = function () {
-    this.getLock();
+    if (!this.getLock()) {
+      return;
+    }
     if (this.state === TOC_EXPAND) {
+      this.tocList.style.height = '0px';
       this.tocList.classList.add('shrink');
       this.tocCaret.classList.add('down');
       this.state = TOC_SHRINK;
     } else {
       this.tocList.classList.remove('shrink');
+      this.tocList.style.height = this.listHeight + 'px';
       this.tocCaret.classList.remove('down');
       this.state = TOC_EXPAND;
     }
