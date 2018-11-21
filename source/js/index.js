@@ -14,8 +14,6 @@
       return;
     }
     this.tocList = this.tocContainer.getElementsByClassName('toc').item(0);
-    this.listHeight = this.tocList.clientHeight;
-    this.tocList.style.height = this.listHeight + 'px';
     this.tocToggle = this.tocContainer.getElementsByClassName('toc-toggle').item(0);
     this.tocCaret = this.tocContainer.getElementsByClassName('toc-caret').item(0);
   }
@@ -25,6 +23,13 @@
     if (!this.tocContainer) {
       return;
     }
+    this.listHeight = this.tocList.clientHeight;
+    this.tocList.style.height = this.listHeight + 'px';
+    window.addEventListener('resize', function () {
+      self.tocList.style.height = self.state ? '' : '0px';
+      self.listHeight = self.tocList.clientHeight;
+      self.tocList.style.height = self.listHeight + 'px';
+    });
     this.tocToggle.addEventListener('click', function () {
       self.toggle();
     });
