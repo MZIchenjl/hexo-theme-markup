@@ -1,12 +1,15 @@
 @import "../variables.less";
+
 #tags {
     &-title {
         font-size: 1.5em;
         text-align: center;
     }
+
     .tags {
         position: relative;
         word-wrap: break-word;
+
         .tag-link {
             display: inline-block;
             color: lighten(@color-default, 20%);
@@ -17,10 +20,12 @@
             border: 1px dashed transparent;
             transition: all 100ms ease;
             -webkit-transition: all 100ms ease;
+
             &:hover {
                 color: @color-default;
                 background-color: #eee;
             }
+
             &:active {
                 color: @color-default;
                 background-color: transparent;
