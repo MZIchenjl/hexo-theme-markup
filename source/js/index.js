@@ -1,7 +1,6 @@
 "use strict";
 
 (function () {
-  "use strict";
   var TOC_EXPAND = true;
   var TOC_SHRINK = false;
   var TOC_LOCK = true;
