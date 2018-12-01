@@ -144,7 +144,7 @@
         self.preImage.src = image.src;
         self.popup.style.display = 'flex';
         this.previewTimer = setTimeout(function () {
-          clearTimeout(this.previewTimer);
+          clearTimeout(self.previewTimer);
           document.body.style.overflow = 'hidden';
           self.popup.classList.add('show');
         });
