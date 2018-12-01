@@ -73,6 +73,9 @@
 
   function ImagePreviewer() {
     var container = document.getElementsByClassName('post-content').item(0);
+    if (!container) {
+      return;
+    }
     this.images = Array.prototype.map.call(container.getElementsByTagName('img'), function (img) {
       return img;
     });
@@ -128,6 +131,9 @@
 
   ImagePreviewer.prototype.init = function () {
     var self = this;
+    if (!this.images) {
+      return;
+    }
     this.initPopup();
     this.images.forEach(function (image, idx) {
       image.addEventListener('click', function () {
