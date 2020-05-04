@@ -15,6 +15,7 @@
     var element = document.createElement('a');
     $(element).attr('data-fancybox', 'images');
     $(element).attr('href', $(this).attr('src'));
+    $(element).addClass('image-link');
     $(this).wrap(element);
   });
   var imageOpts = $.extend(true, {}, $.fancybox.defaults, {
