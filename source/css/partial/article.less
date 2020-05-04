@@ -190,34 +190,8 @@
             }
 
             .toc {
-                -webkit-transform-origin: top;
-                transform-origin: top;
-                -webkit-transform: scaleY(1);
-                transform: scaleY(1);
-                opacity: 1;
-                transition: height 200ms ease-in-out,
-                opacity 200ms ease-in-out,
-                -webkit-transform 200ms ease-in-out;
-                transition: height 200ms ease-in-out,
-                transform 200ms ease-in-out,
-                opacity 200ms ease-in-out;
-                transition: height 200ms ease-in-out,
-                transform 200ms ease-in-out,
-                opacity 200ms ease-in-out,
-                -webkit-transform 200ms ease-in-out;
-
-                &.shrink {
-                    opacity: 0;
-                    -webkit-transform: scaleY(0);
-                    transform: scaleY(0);
-                }
-
                 &-toggle {
                     cursor: pointer;
-                }
-
-                &-title {
-                    margin-bottom: .5em;
                 }
 
                 &-caret {
@@ -268,13 +242,6 @@
         img {
             margin: 30px auto;
             cursor: pointer;
-            transition: box-shadow 200ms ease-in-out,
-            border-color 200ms ease-in-out;
-
-            &:hover {
-                box-shadow: #efefef 0 0 10px 3px;
-                border-color: #ddd;
-            }
         }
 
         iframe {
