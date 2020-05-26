@@ -1,5 +1,13 @@
 <%- js('js/jquery.min.js') %>
 <%- js('js/jquery.fancybox.min.js') %>
+<% if theme.mermaid.enable %>
+<%- js('js/mermaid.min.js') %>
+<script>
+    if (window.mermaid) {
+        mermaid.initialize({{ JSON.stringify(theme.mermaid.options) }});
+    }
+</script>
+<% endif %>
 <%- js('js/index.js') %>
 <% if (theme.plugins.google_analytics) { %>
 <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.plugins.google_analytics %>"></script>
