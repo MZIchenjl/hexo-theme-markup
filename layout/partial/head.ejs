@@ -26,6 +26,6 @@
     <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
     <%- css('css/style') %>
     <% if (theme.plugins.fancybox.enable) { %>
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/<%= theme.plugins.fancybox.version || '3.5.7' %>/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/<%= theme.plugins.fancybox.version || '3.5.7' %>/jquery.fancybox.min.css">
     <% } %>
 </head>

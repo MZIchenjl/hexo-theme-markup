@@ -1,9 +1,9 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/<%= theme.jquery_version || '3.5.1' %>/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/<%= theme.jquery_version || '3.5.1' %>/jquery.min.js"></script>
 <% if (theme.plugins.fancybox.enable) { %>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/<%= theme.plugins.fancybox.version || '3.5.7' %>/jquery.fancybox.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/<%= theme.plugins.fancybox.version || '3.5.7' %>/jquery.fancybox.min.js"></script>
 <% } %>
 <% if (theme.plugins.mermaid.enable) { %>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/<%= theme.plugins.mermaid.version || '8.5.1' %>/mermaid.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mermaid/<%= theme.plugins.mermaid.version || '8.5.1' %>/mermaid.min.js"></script>
 <script>
     if (window.mermaid) {
         mermaid.initialize(<%= theme.plugins.mermaid.options || '{}' %>);
@@ -12,7 +12,7 @@
 <% } %>
 <%- js('js/index.js') %>
 <% if (theme.plugins.google_analytics) { %>
-<script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.plugins.google_analytics %>"></script>
+<script async src="//www.googletagmanager.com/gtag/js?id=<%= theme.plugins.google_analytics %>"></script>
 <%- partial('plugin/google-analytics') %>
 <% } %>
 <% if (theme.plugins.baidu_analytics) { %>
@@ -26,5 +26,5 @@
         }
     };
 </script>
-<script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/<%= theme.plugins.mathjax.version || '3.0.5' %>/es5/tex-mml-chtml.js"></script>
+<script id="MathJax-script" async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/<%= theme.plugins.mathjax.version || '3.0.5' %>/es5/tex-mml-chtml.js"></script>
 <% } %>
