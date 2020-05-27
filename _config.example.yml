@@ -11,11 +11,16 @@ plugins:
   google_analytics:
   google_site_verification:
   baidu_analytics:
-  mathjax: true
+  mathjax:
+    enable: true
+  fancybox:
+    enable: true
+  mermaid: ## mermaid url https://github.com/knsv/mermaid
+    enable: true  # default true
+    options:  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
 
 comment:
   disqus:
-
 
 miscellaneous:
   open_graph: # http://ogp.me
@@ -23,6 +28,4 @@ miscellaneous:
     fb_admins:
     twitter_id:
     google_plus:
-  links:
-    Hexo: https://hexo.io
-    MZI: https://github.com/MZIchenjl
+  # links:
