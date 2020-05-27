@@ -1,10 +1,12 @@
-<%- js('js/jquery.min.js') %>
-<%- js('js/jquery.fancybox.min.js') %>
-<% if (theme.mermaid.enable) { %>
-<%- js('js/mermaid.min.js') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/<%= theme.jquery_version || "3.5.1" %>/jquery.min.js"></script>
+<% if (theme.plugins.fancybox.enable) { %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/<%= theme.plugins.fancybox.version || "3.5.7" %>/jquery.fancybox.min.js"></script>
+<% } %>
+<% if (theme.plugins.mermaid.enable) { %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/<%= theme.plugins.mermaid.version || "8.5.1" %>/mermaid.min.js"></script>
 <script>
     if (window.mermaid) {
-        mermaid.initialize(<%= theme.mermaid.options || '{}' %>);
+        mermaid.initialize(<%= theme.plugins.mermaid.options || '{}' %>);
     }
 </script>
 <% } %>
@@ -16,9 +18,9 @@
 <% if (theme.plugins.baidu_analytics) { %>
 <%- partial('plugin/baidu-analytics') %>
 <% } %>
-<% if (theme.plugins.mathjax) { %>
+<% if (theme.plugins.mathjax.enable) { %>
 <script type="text/x-mathjax-config">
     window.MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
 </script>
-<%- js('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML') %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/<%= theme.plugins.mathjax.version || "2.7.5" %>/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <% } %>
