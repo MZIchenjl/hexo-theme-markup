@@ -12,9 +12,9 @@
         if (is_archive()) {
             title = capitalize(__('menu.archives'));
         } else if (is_category()) {
-            title = capitalize(__('menu.categories')) + ': ' + _.capitalize(page.category);
+            title = capitalize(__('menu.categories')) + ': ' + capitalize(page.category);
         } else if (is_tag()) {
-            title = capitalize(__('menu.tags')) + ': #' + _.capitalize(page.tag);
+            title = capitalize(__('menu.tags')) + ': #' + capitalize(page.tag);
         }
     -%>
     <%- open_graph({
