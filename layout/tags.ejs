@@ -1,6 +1,11 @@
 <section id="tags">
     <h2 id="tags-title">
-        <%= _.capitalize(__('menu.tags')) %>
+        <%
+        const capitalize = (string) => {
+            return string ? string.charAt(0).toUpperCase() + string.slice(1).toLowerCase() : '';
+        };
+        %>
+        <%= capitalize(__('menu.tags')) %>
     </h2>
     <div class="tags">
         <% if(site.tags.length) { %>

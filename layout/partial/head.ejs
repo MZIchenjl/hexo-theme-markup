@@ -5,13 +5,16 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <%
+    const capitalize = (string) => {
+        return string ? string.charAt(0).toUpperCase() + string.slice(1).toLowerCase() : '';
+    };
         var title = page.title;
         if (is_archive()) {
-            title = _.capitalize(__('menu.archives'));
+            title = capitalize(__('menu.archives'));
         } else if (is_category()) {
-            title = _.capitalize(__('menu.categories')) + ': ' + _.capitalize(page.category);
+            title = capitalize(__('menu.categories')) + ': ' + _.capitalize(page.category);
         } else if (is_tag()) {
-            title = _.capitalize(__('menu.tags')) + ': #' + _.capitalize(page.tag);
+            title = capitalize(__('menu.tags')) + ': #' + _.capitalize(page.tag);
         }
     -%>
     <%- open_graph({

@@ -1,11 +1,14 @@
 <%
+const capitalize = (string) => {
+    return string ? string.charAt(0).toUpperCase() + string.slice(1).toLowerCase() : '';
+};
     var title = page.title;
     if (is_archive()) {
-        title = _.capitalize(__('menu.archives'));
+        title = capitalize(__('menu.archives'));
     } else if (is_category()) {
-        title = _.capitalize(__('menu.categories')) + ': ' + page.category;
+        title = capitalize(__('menu.categories')) + ': ' + page.category;
     } else if (is_tag()) {
-        title = _.capitalize(__('menu.tags')) + ': #' + page.tag;
+        title = capitalize(__('menu.tags')) + ': #' + page.tag;
     }
 -%>
 <h1 id="archives-title"><%= title %></h1>

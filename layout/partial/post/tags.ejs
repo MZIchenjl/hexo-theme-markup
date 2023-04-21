@@ -1,6 +1,11 @@
 <% if (post.tags && post.tags.length) { %>
 <div class="post-tags">
-<span><%= _.capitalize(__('menu.tags')) %> : </span>
+    <%
+        const capitalize = (string) => {
+            return string ? string.charAt(0).toUpperCase() + string.slice(1).toLowerCase() : '';
+        };
+    %>
+<span><%= capitalize(__('menu.tags')) %> : </span>
 <%- list_tags(post.tags, { show_count: false, style: 'link' }) %>
 </div>
 <% } %>
