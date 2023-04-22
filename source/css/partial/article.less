@@ -29,7 +29,7 @@
             width: 50%;
         }
         text-decoration: none;
-        color: @color-grey;
+        color: var(--theme-grey-color);
         margin-top: 40px;
         margin-bottom: 40px;
         text-align: center;
@@ -38,7 +38,7 @@
         -webkit-transition: all 200ms ease;
 
         &:hover {
-            color: @color-default;
+            color: var(--theme-color);
         }
     }
 
@@ -46,7 +46,7 @@
         letter-spacing: 2px;
         line-height: 1em;
         font-weight: 600;
-        color: darken(@color-grey, 20%);
+        color: var(--theme-grey-color-dk-20);
         text-transform: uppercase;
     }
 
@@ -55,10 +55,10 @@
 
         &-link {
             text-decoration: none;
-            color: @color-default;
+            color: var(--theme-color);
 
             &:hover {
-                color: lighten(@color-default, 10%);
+                color: var(--theme-color-lt-20);
             }
         }
     }
@@ -67,9 +67,9 @@
         font-size: @font-size-sm + 10%;
 
         .post-category-link {
-            color: @color-link;
+            color: var(--theme-link-color);
             text-decoration: none;
-            border-bottom: 1px dashed @color-default;
+            border-bottom: 1px dashed var(--theme-color);
             padding: 0 .1em;
         }
     }
@@ -83,9 +83,9 @@
         padding: .5em 0;
 
         .tag-link {
-            color: @color-link;
+            color: var(--theme-link-color);
             text-decoration: none;
-            border-bottom: 1px dashed @color-default;
+            border-bottom: 1px dashed var(--theme-color);
             padding: 0 .1em;
 
             &::before {
@@ -97,8 +97,8 @@
     &-more-link {
         float: right;
         text-decoration: none;
-        color: #fff;
-        background-color: @color-default;
+        color: var(--theme-background);
+        background-color: var(--theme-color);
         padding: .2em 1em;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -109,19 +109,19 @@
         border: 1px dashed transparent;
 
         &:hover {
-            color: lighten(@color-default, 20%);
-            background-color: #eee;
+            color: var(--theme-color-lt-20);
+            background-color: var(--theme-background-hover);
         }
 
         &:active {
-            color: @color-default;
+            color: var(--theme-color);
             background-color: transparent;
-            border-color: @color-default;
+            border-color: var(--theme-color);
         }
     }
 
     &-content {
-        color: @color-default;
+        color: var(--theme-color);
         line-height: @line-height;
 
         p {
@@ -137,11 +137,11 @@
             border-color: transparent;
 
             td + td {
-                border-left: thin solid @color-border;
+                border-left: thin solid var(--theme-border-color);
             }
 
             th + th {
-                border-left: thin solid @color-border;
+                border-left: thin solid var(--theme-border-color);
             }
         }
 
@@ -175,8 +175,8 @@
         }
 
         a {
-            color: @color-link;
-            border-bottom: thin dashed @color-default;
+            color: var(--theme-link-color);
+            border-bottom: thin dashed var(--theme-color);
             text-decoration: none;
             padding: 0 .1em;
         }
@@ -187,7 +187,7 @@
 
         #toc {
             position: relative;
-            border-bottom: 1px solid @color-border;
+            border-bottom: 1px solid var(--theme-border-color);
 
             a {
                 border: none;
@@ -206,13 +206,13 @@
                     display: inline-block;
                     border-left: .29em solid transparent;
                     border-right: .29em solid transparent;
-                    border-bottom: .5em solid @color-default;
+                    border-bottom: .5em solid var(--theme-color);
 
                     &.down {
                         border-bottom: none;
                         border-left: .29em solid transparent;
                         border-right: .29em solid transparent;
-                        border-top: .5em solid @color-default;
+                        border-top: .5em solid var(--theme-color);
                     }
                 }
             }
@@ -240,7 +240,7 @@
             max-width: 100%;
             height: auto;
             display: block;
-            border: 1px solid @color-border;
+            border: 1px solid var(--theme-border-color);
         }
 
         img {
@@ -256,17 +256,17 @@
             width: 100%;
             border-collapse: collapse;
             border-spacing: 0;
-            border: 1px solid @color-border;
+            border: 1px solid var(--theme-border-color);
         }
 
         th {
             font-weight: 600;
-            border-bottom: 3px solid @color-border;
+            border-bottom: 3px solid var(--theme-border-color);
             padding: 0.5em;
         }
 
         td {
-            border-bottom: 1px solid @color-border;
+            border-bottom: 1px solid var(--theme-border-color);
             padding: 10px;
         }
 
@@ -281,7 +281,7 @@
             background: #fcfcfc;
             font-family: @font-blockquote-family;
             color: #666;
-            border-left: 5px solid @color-border;
+            border-left: 5px solid var(--theme-border-color);
             padding: 1em 1em 1em 1.5em;
 
             p:first-child {
@@ -319,7 +319,7 @@
         }
 
         .caption {
-            color: @color-grey;
+            color: var(--theme-grey-color);
             display: block;
             font-size: 0.9em;
             margin-top: 0.5em;

@@ -1,10 +1,29 @@
 // colors
 @color-default: #333;
-@background-color-selection: #333;
-@color-selection: #fff;
+@color-default-lt-20: lighten(@color-default, 20%);
+@color-background: #fff;
+@color-background-hover: #eee;
 @color-grey: #777;
+@color-grey-dk-20: darken(@color-grey, 20%);
+@color-grey-lt-15: lighten(@color-grey, 15%);
+@color-grey-lt-40: lighten(@color-grey, 40%);
+@color-grey-lt-50: lighten(@color-grey, 50%);
 @color-border: #eceff2;
 @color-link: #0000f9;
+
+// colors
+@color-default-dark: #fff;
+@color-default-lt-20-dark: lighten(@color-default, 80%);
+@color-background-dark: #333;
+@color-background-hover-dark: #555;
+@color-grey-dark: mix(#777, #fff);
+@color-grey-dk-20-dark: darken(@color-grey-dark, 20%);
+@color-grey-lt-15-dark: lighten(@color-grey-dark, 15%);
+@color-grey-lt-40-dark: lighten(@color-grey-dark, 40%);
+@color-grey-lt-50-dark: lighten(@color-grey-dark, 50%);
+@color-border-dark: #eceff2;
+@color-link-dark: mix(#0000f9, #fff);
+
 // font
 @font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;
 @font-code-family: Menlo, Monaco, 'Courier New', monospace;
@@ -26,3 +45,41 @@
 @h-blue: #4271ae;
 @h-purple: #8959a8;
 @h-fs: 90%;
+
+:root {
+    --theme-color: @color-default;
+    --theme-color-lt-20: @color-default-lt-20;
+    --theme-background: @color-background;
+    --theme-background-hover: @color-background-hover;
+    --theme-switch-background: lighten(@color-background-hover, 20%);
+    --theme-switch-border: darken(@color-background-hover, 20%);
+    --theme-switch-border-hover: @color-default;
+    --theme-grey-color: @color-grey;
+    --theme-grey-color-dk-20: @color-grey-dk-20;
+    --theme-grey-color-lt-15: @color-grey-lt-15;
+    --theme-grey-color-lt-40: @color-grey-lt-40;
+    --theme-grey-color-lt-50: @color-grey-lt-50;
+    --theme-border-color: @color-border;
+    --theme-border-color-lt-25: lighten(@color-border, 25);
+    --theme-link-color: @color-link;
+}
+
+.dark {
+    --theme-color: @color-default-dark;
+    --theme-color-lt-20: @color-default-lt-20-dark;
+    --theme-background: @color-background-dark;
+    --theme-background-hover: @color-background-hover-dark;
+    --theme-switch-border: lighten(@color-default, 20%);
+    --theme-switch-border-hover: @color-default-dark;
+    --theme-switch-background: lighten(@color-background-hover-dark, 20%);
+    --theme-grey-color: @color-grey-dark;
+    --theme-grey-color-dk-20: @color-grey-dk-20-dark;
+    --theme-grey-color-lt-15: @color-grey-lt-15-dark;
+    --theme-grey-color-lt-40: @color-grey-lt-40-dark;
+    --theme-grey-color-lt-50: @color-grey-lt-50-dark;
+    --theme-border-color: @color-border-dark;
+    --theme-border-color-lt-25: lighten(@color-border-dark, 25);
+    --theme-link-color: @color-link-dark;
+}
+
+

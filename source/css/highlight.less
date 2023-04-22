@@ -10,7 +10,7 @@
 }
 
 .line-numbers() {
-    color: @color-default;
+    color: var(--theme-color);
 }
 
 .post-content {
@@ -26,7 +26,7 @@
 
     .highlight {
         .codeBlock();
-        border: 1px dashed darken(@color-border, 25%);
+        border: 1px dashed var(--theme-border-color);
 
         pre {
             margin: 0;
@@ -112,7 +112,7 @@
             font-family: @font-code-family;
 
             a {
-                color: @color-default;
+                color: var(--theme-color);
                 font-weight: normal;
 
                 &:hover {

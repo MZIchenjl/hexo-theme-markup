@@ -2,8 +2,9 @@
 /*! hexo-theme-markup | MIT License | https://github.com/MZIchenjl/hexo-theme-markup */
 @import "./variables.less";
 html {
-    color: #333;
+    color: var(--theme-color);
     font-family: @font-family;
+    background-color: var(--theme-background);
 }
 
 body {
@@ -46,11 +47,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-moz-selection {
-    color: @color-selection;
-    background-color: @background-color-selection;
+    color: var(--theme-background);
+    background-color: var(--theme-color);
 }
 
 ::selection {
-    color: @color-selection;
-    background-color: @background-color-selection;
+    color: var(--theme-background);
+    background-color: var(--theme-color);
+}
+
+a {
+    color: var(--theme-link-color);
 }

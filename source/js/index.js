@@ -26,4 +26,15 @@
     });
     $('[data-fancybox="images"]').fancybox(imageOpts);
   }
+  var themeKey = 'theme';
+  document.getElementById('theme').addEventListener('click', function () {
+    const html = document.querySelector('html');
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark')
+      window.localStorage.setItem(themeKey, 'light');
+    } else {
+      html.classList.add('dark');
+      window.localStorage.setItem(themeKey, 'dark');
+    }
+  })
 })();

@@ -31,4 +31,13 @@
     <% if (theme.plugins.fancybox.enable) { %>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/<%= theme.plugins.fancybox.version || '3.5.7' %>/jquery.fancybox.min.css">
     <% } %>
+        <script>
+            "use strict";
+            (function () {
+                var themeKey = 'theme';
+                if (window.localStorage.getItem(themeKey) === 'dark') {
+                    document.querySelector('html').classList.add('dark');
+                }
+            })();
+        </script>
 </head>

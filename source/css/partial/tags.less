@@ -12,7 +12,7 @@
 
         .tag-link {
             display: inline-block;
-            color: lighten(@color-default, 20%);
+            color: var(--theme-color-lt-20);
             text-decoration: none;
             margin-right: 10px;
             margin-bottom: 10px;
@@ -22,14 +22,14 @@
             -webkit-transition: all 100ms ease;
 
             &:hover {
-                color: @color-default;
-                background-color: #eee;
+                color: var(--theme-color);
+                background-color: var(--theme-background-hover);
             }
 
             &:active {
-                color: @color-default;
+                color: var(--theme-color);
                 background-color: transparent;
-                border-color: @color-default;
+                border-color: var(--theme-color);
             }
         }
     }

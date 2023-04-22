@@ -10,7 +10,7 @@
     span {
         display: inline-block;
         margin-right: 5px;
-        background-color: lighten(@color-grey, 40%);
+        background-color: var(--theme-grey-color-lt-40);
         padding: .5em .8em;
         border-radius: 2px;
         zoom: 1;
@@ -27,26 +27,26 @@
 
     a {
         cursor: pointer;
-        color: @color-default;
+        color: var(--theme-color);
         text-decoration: none;
         transition: all 100ms ease;
         -webkit-transition: all 100ms ease;
         border: 1px dashed transparent;
 
         &:hover {
-            color: lighten(@color-default, 20%);
-            background-color: #eee;
+            color: var(--theme-color-lt-20);
+            background-color:var(--theme-background-hover);
         }
 
         &:active {
-            color: @color-default;
+            color: var(--theme-color);
             background-color: transparent;
-            border-color: @color-default;
+            border-color: var(--theme-color);
         }
     }
 
     .current {
-        background-color: lighten(@color-grey, 50%);
+        background-color: var(--theme-grey-color-lt-50);
         cursor: not-allowed;
     }
 }
