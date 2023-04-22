@@ -35,9 +35,34 @@
             "use strict";
             (function () {
                 var themeKey = 'theme';
+                if (window.matchMedia) {
+                    var themeMedia = window.matchMedia("(prefers-color-scheme: dark)");
+                    if (!window.localStorage.getItem(themeKey)) {
+                        if (themeMedia.matches) {
+                            window.localStorage.setItem(themeKey, 'dark');
+                        } else {
+                            window.localStorage.setItem(themeKey, 'light');
+                        }
+                    }
+                    themeMedia.addEventListener('change', function (e) {
+                        var html = document.querySelector('html');
+                        if (e.matches) {
+                            if (html && !html.classList.contains('dark')) {
+                                html.classList.add('dark');
+                            }
+                            window.localStorage.setItem(themeKey, 'dark');
+                        } else {
+                            if (html && html.classList.contains('dark')) {
+                                html.classList.remove('dark');
+                            }
+                            window.localStorage.setItem(themeKey, 'light');
+                        }
+                    });
+                }
                 if (window.localStorage.getItem(themeKey) === 'dark') {
                     document.querySelector('html').classList.add('dark');
                 }
+
             })();
         </script>
 </head>

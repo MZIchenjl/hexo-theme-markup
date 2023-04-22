@@ -7,8 +7,8 @@
 
     .logo {
         text-decoration: none;
-        color: var(--theme-background);
-        background-color: var(--theme-color);
+        color: var(--theme-color);
+        background-color: var(--theme-background-hover);
         padding: .2em 1em;
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -72,58 +72,26 @@
     }
 }
 
-.theme {
-    position: absolute;
-    right: 0;
-    label {
-        width: 80px;
-        height: 24px;
-        display: block;
-        background-color: var(--theme-color);
-        border-radius: 24px;
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4), inset 0px -1px 3px rgba(255, 255, 255, 0.4);
-        cursor: pointer;
-        transition: 0.3s;
+.dark {
+    .vt-switch {
+        &-check {
+            transform: translateX(18px);
+            background-color: var(--theme-background);
+        }
 
-        &::after {
-            content: "";
-            width: 12px;
-            height: 12px;
-            position: absolute;
-            top: 6px;
-            left: 6px;
-            background: var(--theme-background);
-            border-radius: 32px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
+        &-appearance-sun {
+            transform: translateY(18px);
+        }
+
+        &-appearance-moon {
+            transform: translateY(0);
+        }
+
+        &-switch-icon svg {
+            fill: rgba(255, 255, 255, .87);
+            transition: opacity .25s;
         }
     }
-    input:checked + label {
-        &::after {
-            top: 6px;
-            left: unset;
-            right: 6px;
-        }
-    }
-}
-
-.dark .vt-switch-check {
-    transform: translate(18px);
-    background-color: var(--theme-background);
-}
-
-.dark  {
-    .vt-switch-appearance-moon {
-        opacity: 1;
-    }
-    .vt-switch-appearance-sun {
-        opacity: 0;
-    }
-}
-
-.dark .vt-switch-icon svg {
-    fill: rgba(255, 255, 255, .87);
-    transition: opacity .25s;
 }
 
 .vt-switch {
@@ -133,6 +101,7 @@
         right: 12px;
         z-index: 20;
     }
+
     position: relative;
     border-radius: 11px;
     display: block;
@@ -148,13 +117,18 @@
         border-color: var(--theme-switch-border-hover);
     }
 
+    &-appearance-sun, &-appearance-moon {
+        transition: transform .25s;
+    }
+
     &-appearance-sun {
-        opacity: 1;
+        transform: translateY(0);
     }
 
     &-appearance-moon {
-        opacity: 0;
+        transform: translateY(-18px);
     }
+
     &-check {
         position: absolute;
         top: 1px;
@@ -164,8 +138,9 @@
         border-radius: 50%;
         background-color: var(--theme-color);
         box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 1px 2px rgba(0, 0, 0, .06);
-        transition: background-color .25s,transform .25s;
+        transition: background-color .25s, transform .25s;
     }
+
     &-icon {
         position: relative;
         display: block;
@@ -174,6 +149,7 @@
         border-radius: 50%;
         overflow: hidden;
         background-color: var(--theme-background);
+
         svg {
             position: absolute;
             top: 3px;
